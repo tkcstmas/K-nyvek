@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyvtárkezelő</title>
+</head>
+<body>
+    <table id="bookTable" border="1">
+        <thead>
+            <tr>
+                <th>Cím</th>
+                <th>Szerző</th>
+                <th>Év</th>
+                <th>Oldalszám</th>
+                <th>Állapot</th>
+                <th>Művelet</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <input type="text" id="cimInput" placeholder="Cím">
+    <input type="text" id="szerzoInput" placeholder="Szerző">    
+    <input type="number" id="kiadasiEvInput" placeholder="Kiadás éve">
+    <input type="number" id="oldalszamInput" placeholder="Oldalszám">
+
+
+    <button id="addBookBtn" onclick="addBook()" type="button">Könyv hozzáadása</button>
+    <script src="app.js"></script>
+</body>
+</html>
