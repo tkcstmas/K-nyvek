@@ -202,3 +202,56 @@ function osszesKonyv()
         sorok[i].style.display = "";
     }
 }
+
+function legregebbiKonyv() {
+    const osszes = [...konyvek, ...nemMentettKonyvek];
+    if (osszes.length === 0) {
+        alert("Nincs könyv a listában!");
+        return;
+    }
+    let legregebbi = osszes[0].kiadasiEv;
+    for(let konyv of osszes) 
+        {
+            if (konyv.kiadasiEv < legregebbi) {
+                legregebbi = konyv.kiadasiEv;
+            }
+        }
+
+    const sorok = document.querySelectorAll("#bookTable tr");
+    for( let i = 1; i < sorok.length; i++) {
+        const kiadasiEvOszlop = sorok[i].cells[2];
+        if (parseInt(kiadasiEvOszlop.textContent) === legregebbi) {
+            sorok[i].style.display = "";
+        }
+        else {
+            sorok[i].style.display = "none";
+        }
+    }
+
+}
+function legvastagabbKonyv() {
+    const osszes = [...konyvek, ...nemMentettKonyvek];
+    if (osszes.length === 0) {
+        alert("Nincs könyv a listában!");
+        return;
+    }
+
+    let maxOldalszam = osszes[0].oldalszam;
+    for(let konyv of osszes) {
+        if (konyv.oldalszam > maxOldalszam) {
+            maxOldalszam = konyv.oldalszam;
+        }
+    }
+
+    const sorok = document.querySelectorAll("#bookTable tr");
+    for (let i = 1; i < sorok.length; i++) {
+        const oldalszamOszlop = sorok[i].cells[3];
+        if (parseInt(oldalszamOszlop.textContent) === maxOldalszam) {
+            sorok[i].style.display = "";
+        }
+        else {
+            sorok[i].style.display = "none";
+        }
+    }
+
+}
