@@ -61,7 +61,7 @@ for (let konyv of konyvek) {
     visszahozButton.disabled = true;
 
 
-
+    
     kolcsonozButton.textContent = "Kölcsönöz";
     visszahozButton.textContent = "Visszahoz";
     deleteButton.textContent = "Törlés";
